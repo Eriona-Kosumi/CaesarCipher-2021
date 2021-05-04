@@ -1,0 +1,11 @@
+static void Main(string[] args)
+        {
+
+            
+            string ciphertext = File.ReadAllText(@"C:\Users\Eriona\Desktop\New folder\file.txt");
+
+            string plaintext = Dekriptimi(ciphertext);
+            Console.WriteLine("Fjalia e dekriptuar:  " + plaintext);
+
+            Console.ReadKey();
+        }
