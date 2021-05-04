@@ -20,6 +20,9 @@ namespace CaesarCipher
             string ciphertext = Encrypt(plaintext, int.Parse(key));
             Console.WriteLine("Ciphertexti i fituar: " + ciphertext);
 
+            string decrypttext = Decrypt(ciphertext, int.Parse(key));
+            Console.WriteLine("Teksti i dekriptuar: " + decrypttext);
+
             Console.ReadKey();
         }
 
@@ -40,7 +43,24 @@ namespace CaesarCipher
 
             return sbCiphertext.ToString();
         }
- 
+
+        static string Decrypt(string ciphertext, int key)
+        {
+            StringBuilder sbDecrypttext = new StringBuilder(ciphertext);
+            for (int i = 0; i < ciphertext.Length; i++)
+            {
+                char ch = ciphertext[i];
+
+                int pozitach = ch - 'A';
+                pozitach = (pozitach - key +26) % 26;
+
+                ch = (char)(pozitach + 'A');
+
+                sbDecrypttext[i] = ch;
+            }
+
+            return sbDecrypttext.ToString();
+        }
     }
 
 }
