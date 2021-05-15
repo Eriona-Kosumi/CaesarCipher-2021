@@ -1,0 +1,7 @@
+List<string> list = new List<string>();
+
+            for (int i = 0; i < Split_Mesazhi.Length; i++)
+                for (int j = 0; j < tekstiKontrollues.Length; j++)
+                    if (Split_Mesazhi[i].Length == tekstiKontrollues[j].Length)
+                        list.Add(Split_Mesazhi[i]);
+            string[] vargu = list.ToArray();
