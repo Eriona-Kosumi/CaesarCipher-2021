@@ -1,0 +1,12 @@
+int celesi = 0;
+            for (int i = 0; i < vargu.Length; i++)
+            {
+                celesi = kontrollo(tekstiKontrollues, vargu[i].ToString());
+                if (celesi != -1)
+                {
+                   sms += Mesazhi(ciphertext, celesi);
+                    break;
+
+                }
+            }
+            return sms;
